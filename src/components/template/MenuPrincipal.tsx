@@ -11,7 +11,7 @@ import useBoolean from "@/data/hooks/useBoolean";
 import useMenu from "@/data/hooks/useMenu";
 
 export default function MenuPrincipal() {
-  const { secoes, mini, toggleMini } = useMenu();
+  const { secoes, mini, toggleMini, alternarSecao } = useMenu();
 
   function renderizarSecoes() {
     return secoes.map((secao: MenuSecao) => (
@@ -20,6 +20,7 @@ export default function MenuPrincipal() {
         titulo={secao.titulo}
         mini={mini}
         aberta={secao.aberta}
+        onClick={() => alternarSecao(secao)}
       >
         {renderizarItens(secao)}
       </MenuPrincipalSecao>
@@ -35,6 +36,7 @@ export default function MenuPrincipal() {
         tag={item.tag}
         url={item.url}
         mini={mini}
+        selecionado={item.selecionado}
       />
     ));
   }

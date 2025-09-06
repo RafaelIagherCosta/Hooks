@@ -12,10 +12,10 @@ import {
   IconUsers,
 } from "@tabler/icons-react";
 
-const secoes = [
+export const secoes = [
   {
     titulo: "Essenciais",
-    aberta: false,
+    aberta: true,
     itens: [
       {
         titulo: "Contador",
